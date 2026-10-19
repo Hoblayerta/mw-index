@@ -1,0 +1,16 @@
+mes,h100_usd_hora,segmento,tipo,fuente
+2024-06,2.58,marketplace,mediana_periodo,https://www.silicondata.com/blog/h100-rental-price-over-time
+2024-09,3.06,indice_mixto,punto,https://medium.com/@cli_87015/a-correction-in-compute-tracing-the-decline-in-h100-rental-prices-af02da399f5a
+2025-01,2.50,indice_mixto,punto,https://spectrum.ieee.org/gpu-prices
+2025-02,2.30,indice_mixto,punto,https://spectrum.ieee.org/gpu-prices
+2025-05,2.37,indice_mixto,punto,https://spectrum.ieee.org/gpu-prices
+2025-06,2.36,indice_mixto,punto,https://medium.com/@cli_87015/a-correction-in-compute-tracing-the-decline-in-h100-rental-prices-af02da399f5a
+2025-07,1.95,marketplace,mediana_periodo,https://www.silicondata.com/blog/h100-rental-price-over-time
+2025-08,1.95,marketplace,mediana_periodo,https://www.silicondata.com/blog/h100-rental-price-over-time
+2025-09,1.95,marketplace,mediana_periodo,https://www.silicondata.com/blog/h100-rental-price-over-time
+2025-10,1.70,contrato_1y,punto,https://uvik.net/blog/gpu-price-index/
+2025-12,2.00,indice_mixto,punto,https://www.silicondata.com/blog/h100-price-spike
+2026-01,2.20,indice_mixto,punto,https://www.silicondata.com/blog/h100-price-spike
+2026-03,2.35,contrato_1y,punto,https://uvik.net/blog/gpu-price-index/
+2026-04,2.82,compuesto,punto,https://uvik.net/blog/gpu-price-index/
+2026-10,2.81,indice_mixto,punto,https://uvik.net/blog/gpu-price-index/

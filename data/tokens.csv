@@ -1,0 +1,9 @@
+mes,usd_por_millon,nivel,modelo,fuente
+2022-11,20.00,GPT-3.5 (MMLU 64.8),GPT-3.5,https://report-ai.org/indexes/ai-economics/llm-token-price-index/
+2023-03,37.50,GPT-4,GPT-4 8K (blended 3:1),https://benchlm.ai/llm-pricing-trends
+2023-11,15.00,GPT-4,GPT-4 Turbo (blended 3:1),https://benchlm.ai/llm-pricing-trends
+2024-05,7.50,GPT-4,GPT-4o lanzamiento (blended 3:1),https://perform.digital/blogs/inference-cost-collapse/
+2024-10,0.07,GPT-3.5 (MMLU 64.8),Gemini 1.5 Flash 8B,https://report-ai.org/indexes/ai-economics/llm-token-price-index/
+2024-10,4.375,GPT-4,GPT-4o post rebaja (blended 3:1),https://techcrunch.com/2025/02/27/openai-unveils-gpt-4-5-orion-its-largest-ai-model-yet/
+2025-04,3.50,GPT-4,GPT-4.1 (blended 3:1),https://benchlm.ai/llm-pricing-trends
+2025-12,0.40,GPT-4 (estimacion),equivalente GPT-4,https://introl.com/blog/inference-unit-economics-true-cost-per-million-tokens-guide
