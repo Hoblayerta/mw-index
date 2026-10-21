@@ -4,6 +4,8 @@ What 1 MW earns per day in three uses: mining Bitcoin, hosting AI for a third pa
 
 ![What 1 MW earns per day](out/mw_minar_vs_ia.png)
 
+Second analysis, in [`costo-por-byte/`](costo-por-byte/): energy cost per vB of block space vs the fee users pay for it, monthly from Jan 2024 to Sep 2026.
+
 ## Run it
 
 ```
