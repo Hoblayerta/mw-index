@@ -34,7 +34,7 @@ Per block (600 s average):
 - Energy cost per vB = kWh per vB x US$0.048/kWh
 - Fee per vB = average fees per block (BTC) x BTC price / vB per block
 
-Fleet efficiency is shown as three lines (13.5, 17.5 and 29.5 J/TH), the same fleets as the MW index. The real network average moved down over the period, so the true line drifts from the upper band toward the middle one.
+Fleet efficiency is shown as three lines (13.5, 17.5 and 29.5 J/TH), the same fleets as the MW index. Each line holds efficiency fixed for the whole period. I did not find a public series for the network-wide average, so the lines are a range, not an estimate of the real path. What does not depend on that assumption: hashes per vB went up 54% from Apr 2024 to Sep 2026 (hashrate x 600 / vB per block).
 
 ## Data
 
