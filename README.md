@@ -6,6 +6,10 @@ What 1 MW earns per day in three uses: mining Bitcoin, hosting AI for a third pa
 
 Second analysis, in [`costo-por-byte/`](costo-por-byte/): energy cost per vB of block space vs the fee users pay for it, monthly from Jan 2024 to Sep 2026.
 
+Third, in [`costo-por-inscripcion/`](costo-por-inscripcion/): realized energy cost per inscription, rune and stamp, for a sample of 800 items.
+
+Site study, in [`estudio-de-sitio/`](estudio-de-sitio/): the one-sheet an operator receives, keep mining vs host AI vs own GPUs, with capex and payback of each path.
+
 ## Run it
 
 ```

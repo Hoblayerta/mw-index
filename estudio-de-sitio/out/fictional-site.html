@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site study: Fictional site</title>
+<style>
+@page { size: Letter; margin: 0.45in 0.5in; }
+:root { --ink:#1a1a1a; --mute:#5c5c5c; --line:#d9d6cf; --bg:#ffffff; --soft:#f5f3ee; --neg:#a3291d; --negbg:#fbeae7; --gap:#7a5a00; --gapbg:#fff4cc; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:10.5pt/1.35 "Helvetica Neue", Arial, sans-serif; }
+.page { max-width:7.5in; margin:0 auto; padding:16px; }
+@media print { .page { padding:0; } }
+.example { border:3px solid var(--neg); color:var(--neg); text-align:center; font-weight:800; font-size:22pt; letter-spacing:.04em; padding:6px; margin-bottom:10px; }
+h1 { font-size:17pt; margin:0 0 2px; }
+.sub { color:var(--mute); margin:0 0 10px; }
+.inputs { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:12px; }
+.inputs div { background:var(--soft); padding:6px 8px; border-radius:4px; }
+.inputs b { display:block; font-size:14pt; }
+.inputs span { color:var(--mute); font-size:8.5pt; }
+h2 { font-size:11pt; margin:12px 0 4px; text-transform:uppercase; letter-spacing:.05em; color:var(--mute); }
+table { width:100%; border-collapse:collapse; }
+th, td { text-align:left; vertical-align:top; padding:6px 5px; border-bottom:1px solid var(--line); }
+thead th, thead th.num { font-size:8.5pt; color:var(--mute); font-weight:600; border-bottom:1.5px solid var(--ink); }
+tbody th { width:30%; font-size:11pt; }
+.pb { font-weight:700; font-size:9.5pt; }
+.basis { font-weight:400; font-size:8.5pt; color:var(--mute); margin-top:2px; }
+.num { text-align:right; font-variant-numeric:tabular-nums; font-size:12pt; font-weight:700; white-space:nowrap; }
+.capex { font-size:8.5pt; }
+.gap { background:var(--gapbg); color:var(--gap); padding:0 3px; border-radius:2px; font-weight:600; }
+.months { display:grid; grid-template-columns:repeat(8,1fr); gap:4px; }
+.m { background:var(--soft); padding:5px 4px; border-radius:4px; text-align:center; }
+.m.neg { background:var(--negbg); color:var(--neg); }
+.mm { font-size:8pt; color:inherit; opacity:.8; }
+.mv { font-weight:700; font-size:10.5pt; font-variant-numeric:tabular-nums; }
+.mh { font-size:7.5pt; opacity:.75; }
+.lead { font-size:11pt; margin:6px 0 0; }
+.small { font-size:8pt; color:var(--mute); }
+ul.small { margin:4px 0 0; padding-left:16px; }
+.foot { margin-top:10px; border-top:1px solid var(--line); padding-top:6px; }
+</style></head>
+<body><div class="page">
+<div class="example">EXAMPLE, fictional site</div>
+<h1>Site study: Fictional site</h1>
+<p class="sub">What each MW of this site earns per day in three paths, from the public model at github.com/Hoblayerta/mw-index, plus public filings where marked. Model output from public averages, not a forecast and not an offer.</p>
+
+<div class="inputs">
+<div><b>20 MW</b><span>Site power</span></div>
+<div><b>$50/MWh</b><span>Power price</span></div>
+<div><b>27 J/TH</b><span>Fleet efficiency</span></div>
+<div><b>1.3</b><span>PUE for AI load</span></div>
+</div>
+
+<h2>Three paths, USD per day</h2>
+<table>
+<thead><tr><th>Path and basis</th><th class="num">Per MW</th><th class="num">Whole site</th><th>Capex per grid MW</th><th>Capex, whole site</th><th>Simple payback</th></tr></thead>
+<tbody><tr><th>Keep mining<div class='basis'>Hashprice Sep 2026: $39.33/PH/day. Net of power.</div></th><td class='num'>$257</td><td class='num'>$5,133</td><td class='capex'>$0.85M to build a mine (model reference), already spent on an existing site. Fleet refresh: <span class="gap">Not in model: ASIC price per TH</span></td><td class='capex'>$17.00M (reference)</td><td class='capex pb'><span class="gap">Not found: needs ASIC price per TH</span></td></tr><tr><th>Host AI for a tenant<div class='basis'>$1.85M per MW of IT per year (TeraWulf / Fluidstack). Power is passed through to the tenant, so no power cost is subtracted.</div></th><td class='num'>$3,899</td><td class='num'>$77,977</td><td class='capex'>$6.15M to $8.46M: $8M to $11M per MW of critical IT (TeraWulf, Cipher filings) divided by PUE</td><td class='capex'>$123.08M to $169.23M</td><td class='capex pb'>4.3 to 5.9 years</td></tr><tr><th>Own GPUs (H100)<div class='basis'>569 H100 per grid MW at $2.81/h (Oct 2026), 71% utilization. Net of power.</div></th><td class='num'>$26,056</td><td class='num'>$521,123</td><td class='capex'>$20.00M (CoinShares Q4 2025, in the model; source does not say per MW of IT or grid)</td><td class='capex'>$400.00M</td><td class='capex pb'>2.1 years</td></tr></tbody>
+</table>
+<p class="small">Mining and owned GPUs are net of power. Hosting carries no power cost because the tenant pays it in TeraWulf's Fluidstack lease (Cipher's release does not say). Simple payback = capex per MW / (net USD per MW per day x 365). It does not include depreciation, financing, staff, site operating costs or tenant risk.</p>
+
+<h2>Mining, last 8 months with data (net USD per MW per day)</h2>
+<div class="months"><div class='m neg'><div class='mm'>Feb 2026</div><div class='mv'>-$3</div><div class='mh'>hp $32.31</div></div><div class='m neg'><div class='mm'>Mar 2026</div><div class='mv'>-$42</div><div class='mh'>hp $31.27</div></div><div class='m'><div class='mm'>Apr 2026</div><div class='mv'>$56</div><div class='mh'>hp $33.92</div></div><div class='m'><div class='mm'>May 2026</div><div class='mv'>$156</div><div class='mh'>hp $36.60</div></div><div class='m neg'><div class='mm'>Jun 2026</div><div class='mv'>-$75</div><div class='mh'>hp $30.37</div></div><div class='m neg'><div class='mm'>Jul 2026</div><div class='mv'>-$44</div><div class='mh'>hp $31.21</div></div><div class='m'><div class='mm'>Aug 2026</div><div class='mv'>$83</div><div class='mh'>hp $34.63</div></div><div class='m'><div class='mm'>Sep 2026</div><div class='mv'>$257</div><div class='mh'>hp $39.33</div></div></div>
+<p class="lead"><b>4 of 8 months at or below zero</b> for this fleet and power price. Break-even hashprice: <b>$32.40/PH/day</b>. Range over the 8 months: -$75 to $257 per MW per day.</p>
+
+<div class="foot small">
+<p style="margin:0 0 4px"><b>Assumptions.</b> Mining puts all 20 MW on ASICs at 27 J/TH (37.0 PH/s per MW, no cooling overhead), revenue = hashprice x PH/s, minus 24 MWh/day at your tariff. AI paths use IT load = 1/PUE of each grid MW; 740 H100 per MW of IT (from NVIDIA DGX H100 specs); 71% utilization (Epoch); hosting rate $1.85M per MW of IT per year (TeraWulf / Fluidstack). Mine and GPU capex per MW from CoinShares Q4 2025 (in the model); hosting capex from TeraWulf and Cipher filings (not in the model). Fees are inside hashprice.</p>
+<p style="margin:0 0 4px"><b>Sources.</b> Hashprice: Luxor Hashrate Index monthly lookbacks (7 pages), Sep 2026 from a secondary summary (asic.tools). H100: https://uvik.net/blog/gpu-price-index/ (mixed index; H100 points mix marketplace, contract and index prices). Each row's URL is in github.com/Hoblayerta/mw-index/data. Series compiled 19 Oct 2026. Hosting capex and power terms, read 2 Nov 2026: TeraWulf, Fluidstack deal, 14 Aug 2025: $8-10M per MW of critical IT load, modified gross lease (https://www.sec.gov/Archives/edgar/data/1083301/000110465925078084/tm2523008d2_ex99-1.htm). TeraWulf, Abernathy JV deck, Oct 2025: $8-10M per critical MW, &quot;Power 100% passed-through to tenant&quot; (https://www.sec.gov/Archives/edgar/data/0001083301/000110465925102858/tm2529509d1_ex99-3.htm). Cipher, Fluidstack deal, 25 Sep 2025: $9-11M per MW of critical IT load, modified gross lease, power terms not stated (https://www.sec.gov/Archives/edgar/data/1819989/000095010325012168/dp234624_ex9901.htm).</p>
+<p style="margin:0">Generated 02 Nov 2026 13:54 CST with estudio-de-sitio/estudio_de_sitio.py. Model check: reproduces out/tabla_mw.csv.</p>
+</div>
+</div></body></html>
