@@ -4,6 +4,20 @@ Open notes on the economics of energy and compute: what 1 MW earns mining Bitcoi
 
 Who it's for: bitcoin miners of 5 to 50 MW wondering whether to move power to AI, the people who finance them, and anyone curious about where energy, Bitcoin and AI compute meet.
 
+## This week's number: when would mining beat AI again?
+
+![Bitcoin price needed for mining 1 MW to match AI hosting](rentabilidad-diaria-ml/out/empate_btc.png)
+
+| Fleet | Bitcoin needed to match AI hosting | If hosting paid half |
+| --- | --- | --- |
+| Older, 29.5 J/TH | $305k | $198k |
+| Mid, 17.5 J/TH | $181k | $118k |
+| Newest, 13.5 J/TH | $139k | $91k |
+
+Bitcoin averaged $80k in Sep 2026. With power at 7 cents, mining 1 MW has to earn the hosting rate ($3,899 a day) plus its own power bill. That takes Bitcoin at 1.7 to 3.8 times its September price, and it is a floor: when the price rises, hashrate follows. Script and data: [`rentabilidad-diaria-ml/empate_btc.py`](rentabilidad-diaria-ml/empate_btc.py).
+
+## What 1 MW earns per day
+
 ![What 1 MW earns per day](out/mw_minar_vs_ia.png)
 
 ## Start here
@@ -25,6 +39,7 @@ Newest first. Each line links to the work or the source behind it.
 - A daily dataset of what 1 MW nets mining since 2016 (3,921 days, three fleets): [`rentabilidad-diaria-ml/`](rentabilidad-diaria-ml/).
 - Logistic regression, linear regression and SVR all lose to the rule "next month looks like this month". What an operator sees on today's bill is the better forecast.
 - With power at 7 cents, a 29.5 J/TH fleet lost money in every 30-day window of 2026 (median −$14,493 per MW per month). It only breaks even under 5.17 cents/kWh.
+- For mining to pay as much as hosting AI, Bitcoin would need $139k (newest fleet) to $305k (older fleet), against $80k in Sep 2026: the chart at the top.
 
 ### Week of 2 Nov 2026: the money follows the signed tenant
 

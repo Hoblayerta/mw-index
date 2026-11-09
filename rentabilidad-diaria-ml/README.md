@@ -8,6 +8,7 @@ A daily dataset and a machine-learning project built on the mw-index formulas, d
 - `construir_dataset.py`: builds the CSV from blockchain.com daily series.
 - `proyecto_mw.ipynb`: the notebook, executed (EDA, logistic regression, linear regression, SVR, baselines). Reads `mw_bitcoin_diario.csv` and `../out/tabla_mw.csv`.
 - `informe_proyecto_mw.pdf`: the two-page report (in Spanish).
+- `empate_btc.py`: the Bitcoin price at which mining 1 MW pays as much as hosting AI, per fleet. Writes `out/empate_btc.png` and `out/empate_btc.csv`.
 - `h100_semanal_getdeploying.csv` and `h100_mensual_pulse.csv`: H100 hourly prices, for the mining vs AI chart only (one year of history, too short to train on).
 
 Column names are in Spanish, like the rest of the repo.
