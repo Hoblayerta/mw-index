@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site study: Fictional site</title>
+<style>
+@page { size: Letter; margin: 0.45in 0.5in; }
+:root { --ink:#1a1a1a; --mute:#5c5c5c; --line:#d9d6cf; --bg:#ffffff; --soft:#f5f3ee; --neg:#a3291d; --negbg:#fbeae7; --gap:#7a5a00; --gapbg:#fff4cc; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:10.5pt/1.35 "Helvetica Neue", Arial, sans-serif; }
+.page { max-width:7.5in; margin:0 auto; padding:16px; }
+@media print { .page { padding:0; } }
+.example { border:3px solid var(--neg); color:var(--neg); text-align:center; font-weight:800; font-size:22pt; letter-spacing:.04em; padding:6px; margin-bottom:10px; }
+h1 { font-size:17pt; margin:0 0 2px; }
+.sub { color:var(--mute); margin:0 0 10px; }
+.inputs { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:12px; }
+.inputs div { background:var(--soft); padding:6px 8px; border-radius:4px; }
+.inputs b { display:block; font-size:14pt; }
+.inputs span { color:var(--mute); font-size:8.5pt; }
+h2 { font-size:11pt; margin:12px 0 4px; text-transform:uppercase; letter-spacing:.05em; color:var(--mute); }
+table { width:100%; border-collapse:collapse; }
+th, td { text-align:left; vertical-align:top; padding:6px 5px; border-bottom:1px solid var(--line); }
+thead th, thead th.num { font-size:8.5pt; color:var(--mute); font-weight:600; border-bottom:1.5px solid var(--ink); }
+tbody th { width:30%; font-size:11pt; }
+.pb { font-weight:700; font-size:9.5pt; }
+.basis { font-weight:400; font-size:8.5pt; color:var(--mute); margin-top:2px; }
+.num { text-align:right; font-variant-numeric:tabular-nums; font-size:12pt; font-weight:700; white-space:nowrap; }
+.capex { font-size:8.5pt; }
+.gap { background:var(--gapbg); color:var(--gap); padding:0 3px; border-radius:2px; font-weight:600; }
+.months { display:grid; grid-template-columns:repeat(8,1fr); gap:4px; }
+.m { background:var(--soft); padding:5px 4px; border-radius:4px; text-align:center; }
+.m.neg { background:var(--negbg); color:var(--neg); }
+.mm { font-size:8pt; color:inherit; opacity:.8; }
+.mv { font-weight:700; font-size:10.5pt; font-variant-numeric:tabular-nums; }
+.mh { font-size:7.5pt; opacity:.75; }
+.lead { font-size:11pt; margin:6px 0 0; }
+.small { font-size:8pt; color:var(--mute); }
+ul.small { margin:4px 0 0; padding-left:16px; }
+.mixblock { break-inside:avoid; page-break-inside:avoid; }
+table.obra tbody th { width:58%; font-size:9.5pt; white-space:normal; }
+table.obra td, table.obra th { padding:4px 5px; }
+table.mix th { width:auto; font-size:9pt; }
+table.mix tbody th { white-space:nowrap; }
+table.mix { table-layout:auto; }
+table.mix .capex { white-space:normal; min-width:1.1in; }
+table.mix td, table.mix th { padding:4px 5px; }
+.num.s { font-size:10pt; }
+tr.mine { background:var(--soft); }
+.plan { font-size:7.5pt; font-weight:700; color:var(--mute); text-transform:uppercase; }
+.example.public { font-size:12pt; border-width:2px; }
+.example.operador { color:var(--ink); border-color:var(--ink); }
+ul.origen { margin:-6px 0 8px; padding-left:16px; }
+.box { border:1.5px solid var(--ink); border-radius:4px; padding:5px 8px; margin:0 0 4px; font-size:8.8pt; line-height:1.28; }
+.box ul.small { font-size:8pt; color:var(--ink); margin:2px 0 0; }
+.box li { margin:0; }
+.una { font-size:9.5pt; }
+.una h1 { font-size:15pt; }
+.una .sub { font-size:8.5pt; margin-bottom:6px; }
+.una .inputs b { font-size:12pt; }
+.una .inputs { margin-bottom:8px; }
+.una tbody th { font-size:10pt; }
+.una .num { font-size:11pt; }
+.una th, .una td { padding:4px 5px; }
+.una h2 { margin:8px 0 3px; }
+.una table.mix tbody th { white-space:normal; width:30%; font-size:8.5pt; }
+.una .small { font-size:7.5pt; }
+.una .basis { display:none; }
+.una .lead { font-size:9.5pt; }
+.una ul.origen { font-size:7.5pt; }
+.foot { margin-top:10px; border-top:1px solid var(--line); padding-top:6px; }
+</style></head>
+<body class="una"><div class="page">
+<div class="example">EXAMPLE, fictional site</div>
+<h1>Site study: Fictional site</h1>
+<p class="sub">What each MW of this site earns per day in three paths, from the public model at github.com/Hoblayerta/mw-index, plus public filings where marked. Model output from public averages, not a forecast and not an offer.</p>
+
+<div class="inputs">
+<div><b>20 MW</b><span>Site power</span></div>
+<div><b>$50/MWh</b><span>Power price</span></div>
+<div><b>27 J/TH</b><span>Fleet efficiency</span></div>
+<div><b>1.3</b><span>PUE for AI load</span></div>
+</div>
+
+
+<div class='box'><p style='margin:0'><b>Own cash per MW moved to AI: $1.76M to $2.41M</b> before first rent (10-year loan at 10%). For 20 MW all to AI: $35.20M to $48.27M. Who has put up that cash instead, with public examples: the tenant, as a jv partner, a gpu host&#x27;s capital arm, convertible-note investors, the operator&#x27;s own bitcoin. <span class='gap'>Missing:</span> No source shows anyone putting up the 20% for a 5 to 50 MW site without a signed tenant, or a tenant prepaying rent to fund the build.</p></div>
+
+<h2>Three paths, USD per day</h2>
+<table>
+<thead><tr><th>Path and basis</th><th class="num">Per MW</th><th class="num">Whole site</th><th>Capex per grid MW</th><th>Capex, whole site</th><th>Simple payback</th></tr></thead>
+<tbody><tr><th>Keep mining<div class='basis'>Hashprice Sep 2026: $39.33/PH/day. Net of power.</div></th><td class='num'>$257</td><td class='num'>$5,133</td><td class='capex'>$0.85M to build a mine (model reference), already spent on an existing site. Fleet refresh: <span class="gap">Not in model: ASIC price per TH</span></td><td class='capex'>$17.00M (reference)</td><td class='capex pb'><span class="gap">Not found: needs ASIC price per TH</span></td></tr><tr><th>Host AI for a tenant<div class='basis'>$1.85M per MW of IT per year (TeraWulf / Fluidstack). Power is passed through to the tenant, so no power cost is subtracted.</div></th><td class='num'>$3,899</td><td class='num'>$77,977</td><td class='capex'>$6.15M to $8.46M: $8M to $11M per MW of critical IT (TeraWulf, Cipher filings) divided by PUE</td><td class='capex'>$123.08M to $169.23M</td><td class='capex pb'>4.3 to 5.9 years</td></tr><tr><th>Own GPUs (H100)<div class='basis'>569 H100 per grid MW at $2.81/h (Oct 2026), 71% utilization. Net of power.</div></th><td class='num'>$26,056</td><td class='num'>$521,123</td><td class='capex'>$20.00M (CoinShares Q4 2025, in the model; source does not say per MW of IT or grid)</td><td class='capex'>$400.00M</td><td class='capex pb'>2.1 years</td></tr></tbody>
+</table>
+
+
+<div class="mixblock">
+<h2>Financing the AI part, per grid MW moved to AI</h2>
+<p class="lead" style="margin:0 0 4px"><b>Answer for this site:</b> each MW moved to AI needs about $1.76M of your cash before first rent and gives it back in 82 months (6.8 yr) from signing, on 10-year loan at 10%, only in the favorable case (low capex, 85% margin). On a 5-year loan the rent does not cover the payment. How many of the 20 MW go to AI is set by your cash: MW = your cash / $1.76M or more.</p>
+<table class="mix">
+<thead><tr><th>Loan term and rate</th><th>Your cash before first rent</th><th class="num">DSCR, first year at full rent</th><th>Meets 1.15x?</th><th>Your cash back, from signing</th></tr></thead>
+<tbody><tr><th>10 years at 10%</th><td class='capex'>$1.76M to $2.41M</td><td class='num s'>1.29x to 0.77x</td><td class='capex'>only favorable</td><td class='capex'>82 months (6.8 yr) to 170 months (14.2 yr)</td></tr><tr><th>10 years at 15%</th><td class='capex'>$1.95M to $2.68M</td><td class='num s'>1.04x to 0.62x</td><td class='capex'>no</td><td class='capex'>112 months (9.3 yr) to 194 months (16.2 yr)</td></tr></tbody>
+</table>
+<p class="small">12 months of construction with no AI income, then 6 months of tenant ramp. Loan of 80% of capex with a 3-month reserve (USD.AI structure), rates of 10% and 15% (what USD.AI charged smaller operators, American Compute, Oct 2026). Ranges: low capex and 85% NOI margin to high capex and 70%. Mining for the last 8 months at this fleet and power price: 4 of 8 at or below zero.</p>
+</div>
+<div class="foot small"><p style="margin:0">One-page summary. The full study (fictional-site.pdf) has the month-by-month mining, the MW mix, every assumption and every source link. Model: github.com/Hoblayerta/mw-index. Generated 09 Nov 2026 15:28 CST.</p></div>
+
+</div></body></html>

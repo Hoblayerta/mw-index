@@ -35,9 +35,40 @@ tbody th { width:30%; font-size:11pt; }
 .lead { font-size:11pt; margin:6px 0 0; }
 .small { font-size:8pt; color:var(--mute); }
 ul.small { margin:4px 0 0; padding-left:16px; }
+.mixblock { break-inside:avoid; page-break-inside:avoid; }
+table.obra tbody th { width:58%; font-size:9.5pt; white-space:normal; }
+table.obra td, table.obra th { padding:4px 5px; }
+table.mix th { width:auto; font-size:9pt; }
+table.mix tbody th { white-space:nowrap; }
+table.mix { table-layout:auto; }
+table.mix .capex { white-space:normal; min-width:1.1in; }
+table.mix td, table.mix th { padding:4px 5px; }
+.num.s { font-size:10pt; }
+tr.mine { background:var(--soft); }
+.plan { font-size:7.5pt; font-weight:700; color:var(--mute); text-transform:uppercase; }
+.example.public { font-size:12pt; border-width:2px; }
+.example.operador { color:var(--ink); border-color:var(--ink); }
+ul.origen { margin:-6px 0 8px; padding-left:16px; }
+.box { border:1.5px solid var(--ink); border-radius:4px; padding:5px 8px; margin:0 0 4px; font-size:8.8pt; line-height:1.28; }
+.box ul.small { font-size:8pt; color:var(--ink); margin:2px 0 0; }
+.box li { margin:0; }
+.una { font-size:9.5pt; }
+.una h1 { font-size:15pt; }
+.una .sub { font-size:8.5pt; margin-bottom:6px; }
+.una .inputs b { font-size:12pt; }
+.una .inputs { margin-bottom:8px; }
+.una tbody th { font-size:10pt; }
+.una .num { font-size:11pt; }
+.una th, .una td { padding:4px 5px; }
+.una h2 { margin:8px 0 3px; }
+.una table.mix tbody th { white-space:normal; width:30%; font-size:8.5pt; }
+.una .small { font-size:7.5pt; }
+.una .basis { display:none; }
+.una .lead { font-size:9.5pt; }
+.una ul.origen { font-size:7.5pt; }
 .foot { margin-top:10px; border-top:1px solid var(--line); padding-top:6px; }
 </style></head>
-<body><div class="page">
+<body class=""><div class="page">
 <div class="example">EXAMPLE, fictional site</div>
 <h1>Site study: Fictional site</h1>
 <p class="sub">What each MW of this site earns per day in three paths, from the public model at github.com/Hoblayerta/mw-index, plus public filings where marked. Model output from public averages, not a forecast and not an offer.</p>
@@ -48,6 +79,9 @@ ul.small { margin:4px 0 0; padding-left:16px; }
 <div><b>27 J/TH</b><span>Fleet efficiency</span></div>
 <div><b>1.3</b><span>PUE for AI load</span></div>
 </div>
+
+
+<div class='box'><p style='margin:0 0 4px'><b>Own cash per MW moved to AI: $1.76M to $2.41M</b> before first rent (20% of capex $1.23M to $1.69M, 3-month reserve $0.25M to $0.34M, interest during construction $0.27M to $0.37M, mining given up $17,642 to $17,642; 10-year loan at 10%, favorable to unfavorable case, page 2). For 20 MW all to AI: $35.20M to $48.27M.</p><p style='margin:0 0 2px'><b>Who could put up that cash instead, with public examples:</b></p><ul class='small'><li><b>The tenant, as a JV partner.</b> TeraWulf&#x27;s Abernathy JV: TeraWulf 50.1% (can rise to 51%), Fluidstack 49.9% (Oct 2025). The deck does not say how much equity each puts in.</li><li><b>A GPU host&#x27;s capital arm.</b> Hydra Capital: $15M to $250M+, JV &quot;from as little as 5% down&quot;; no published offtake or tier rules.</li><li><b>Convertible-note investors.</b> Blockfusion (50 MW): term sheet for $175M of convertible notes with Sona Asset Management, on a non-binding LOI (TheEnergyMag, 1 Jul 2026).</li><li><b>The operator&#x27;s own bitcoin.</b> PowerCompute (26 MW) borrowed from Arch against 307 BTC, closed by selling 267.3 BTC (8-K, 30 Sep 2026).</li><li>A backstop like Google&#x27;s on TeraWulf&#x27;s and Cipher&#x27;s Fluidstack leases supports the tenant&#x27;s rent, which helps the debt, but it is not equity.</li></ul><p style='margin:4px 0 0' class='small'><span class='gap'>Missing:</span> No source shows anyone putting up the 20% for a 5 to 50 MW site without a signed tenant, or a tenant prepaying rent to fund the build.</p></div>
 
 <h2>Three paths, USD per day</h2>
 <table>
@@ -60,9 +94,39 @@ ul.small { margin:4px 0 0; padding-left:16px; }
 <div class="months"><div class='m neg'><div class='mm'>Feb 2026</div><div class='mv'>-$3</div><div class='mh'>hp $32.31</div></div><div class='m neg'><div class='mm'>Mar 2026</div><div class='mv'>-$42</div><div class='mh'>hp $31.27</div></div><div class='m'><div class='mm'>Apr 2026</div><div class='mv'>$56</div><div class='mh'>hp $33.92</div></div><div class='m'><div class='mm'>May 2026</div><div class='mv'>$156</div><div class='mh'>hp $36.60</div></div><div class='m neg'><div class='mm'>Jun 2026</div><div class='mv'>-$75</div><div class='mh'>hp $30.37</div></div><div class='m neg'><div class='mm'>Jul 2026</div><div class='mv'>-$44</div><div class='mh'>hp $31.21</div></div><div class='m'><div class='mm'>Aug 2026</div><div class='mv'>$83</div><div class='mh'>hp $34.63</div></div><div class='m'><div class='mm'>Sep 2026</div><div class='mv'>$257</div><div class='mh'>hp $39.33</div></div></div>
 <p class="lead"><b>4 of 8 months at or below zero</b> for this fleet and power price. Break-even hashprice: <b>$32.40/PH/day</b>. Range over the 8 months: -$75 to $257 per MW per day.</p>
 
+<div class="mixblock">
+<h2>Mixing mining and AI hosting on this site, USD per day, whole site</h2>
+<table class="mix">
+<thead><tr><th>MW split</th><th class="num">Net, Sep 2026</th><th class="num">Worst of 8 months</th><th class="num">Months at or below 0</th><th class="num">Under lease</th><th>AI capex (hosting)</th><th>Your cash</th></tr></thead>
+<tbody><tr><th>20 mining / 0 AI</th><td class='num s'>$5,133</td><td class='num s'>-$1,504</td><td class='num s'>4 of 8</td><td class='num s'>0%</td><td class='capex'>none</td><td class='capex'>none</td></tr><tr><th>15 mining / 5 AI</th><td class='num s'>$23,344</td><td class='num s'>$18,366</td><td class='num s'>0 of 8</td><td class='num s'>47%</td><td class='capex'>$30.77M to $42.31M</td><td class='capex'>$8.80M to $12.07M</td></tr><tr><th>10 mining / 10 AI</th><td class='num s'>$41,555</td><td class='num s'>$38,237</td><td class='num s'>0 of 8</td><td class='num s'>73%</td><td class='capex'>$61.54M to $84.62M</td><td class='capex'>$17.60M to $24.14M</td></tr><tr><th>5 mining / 15 AI</th><td class='num s'>$59,766</td><td class='num s'>$58,107</td><td class='num s'>0 of 8</td><td class='num s'>89%</td><td class='capex'>$92.31M to $126.92M</td><td class='capex'>$26.40M to $36.21M</td></tr><tr><th>0 mining / 20 AI</th><td class='num s'>$77,977</td><td class='num s'>$77,977</td><td class='num s'>0 of 8</td><td class='num s'>100%</td><td class='capex'>$123.08M to $169.23M</td><td class='capex'>$35.20M to $48.27M</td></tr></tbody>
+</table>
+<p class="small">Each split uses the same 8 months as above: mining MW earn that month's net, AI MW earn the hosting rate. Revenue under lease = hosting revenue / (hosting revenue + mining revenue before power), Sep 2026. Your cash before first rent: as in the financing table below, 10-year term at 10%. Assumes the grid connection splits freely between the two loads; interconnection and finding the tenant are not in the model.</p>
+</div>
+
+<div class="mixblock">
+<h2>Financing the AI part and when it pays back, per grid MW moved to AI</h2>
+<p class="lead" style="margin:0 0 6px"><b>Answer for this site:</b> each MW moved to AI needs about $1.76M of your cash before first rent and gives it back in 82 months (6.8 yr) from signing, on 10-year loan at 10%, only in the favorable case (low capex, 85% margin). On a 5-year loan the rent does not cover the payment. How many of the 20 MW go to AI is set by your cash: MW = your cash / $1.76M or more.</p>
+<p class="lead" style="margin:0 0 4px">Months with no AI income: <b>12 of construction</b> from signing to first rent, then the tenant ramps over <b>6 months</b> to full rent ($118,590 per MW per month).</p>
+<table class="mix">
+<thead><tr><th>Loan term and rate</th><th>Your cash before first rent</th><th class="num">DSCR, first year at full rent</th><th>Meets 1.15x?</th><th>Your cash back, from signing</th></tr></thead>
+<tbody><tr><th>5 years at 10%</th><td class='capex'>$1.88M to $2.58M</td><td class='num s'>0.87x to 0.52x</td><td class='capex'>no</td><td class='capex'>96 months (8.0 yr) to 151 months (12.6 yr)</td></tr><tr><th>5 years at 15%</th><td class='capex'>$2.08M to $2.85M</td><td class='num s'>0.76x to 0.46x</td><td class='capex'>no</td><td class='capex'>104 months (8.7 yr) to 165 months (13.8 yr)</td></tr><tr><th>10 years at 10%</th><td class='capex'>$1.76M to $2.41M</td><td class='num s'>1.29x to 0.77x</td><td class='capex'>only favorable</td><td class='capex'>82 months (6.8 yr) to 170 months (14.2 yr)</td></tr><tr><th>10 years at 15%</th><td class='capex'>$1.95M to $2.68M</td><td class='num s'>1.04x to 0.62x</td><td class='capex'>no</td><td class='capex'>112 months (9.3 yr) to 194 months (16.2 yr)</td></tr></tbody>
+</table>
+<p class="small">Default structure from USD.AI: loan = 80% of capex, you put 20% plus a 3-month debt-service reserve, equal monthly principal from first rent, 1.15x minimum coverage. USD.AI lends 3 to 5 years against GPUs, not buildings; 10 years is the base term of the TeraWulf and Cipher hosting leases. Rates 10% to 15%: what USD.AI charged smaller operators (American Compute, Oct 2026). Ranges run from favorable (low capex, 85% NOI margin) to unfavorable (high capex, 70% NOI margin). Your cash before first rent = 20% of capex + 3-month reserve + interest during construction + mining given up during construction. Below 1.0x the rent does not cover the payment and you add cash every month until the loan is paid; the payback counts that. Construction 12 months: Cipher signed Barber Lake on 25 Sep 2025 with rent from Oct 2026; TeraWulf signed on 14 Aug 2025 and delivered CB-3 in early Jul 2026, and its CB-5 slipped from 2H 2026 to early 2027. Ramp 6 months: TeraWulf's plan, 40 of 200 MW in 1H 2026 and all by year-end. These are large public operators; a 20 MW site has no public benchmark. Interest during construction assumes the loan is drawn evenly over the 12 months and interest is paid monthly (no source for a small site's draw schedule). The AI MW stop mining at signing and give up $48 per MW per day, the average of the last 8 months. Rent is net of site costs: NOI margin 85% (TeraWulf, Cipher) to ~70% (TeraWulf Abernathy, average over lease life); NOI = rent less property operating expenses, property taxes and insurance. Not included: income taxes, depreciation, and the reserve coming back at the end.</p>
+</div>
+
+<div class="mixblock">
+<h2>Who pays for the build, per grid MW moved to AI</h2>
+<table class="obra">
+<thead><tr><th>Structure</th><th>Your cash before first rent</th><th class="num">You net per month, first year at full rent</th></tr></thead>
+<tbody><tr><th>You build it (10-year loan at 10%)<div class='basis'>Current scenario: you put the equity, the reserve and the interest during construction; you keep all the rent net of site costs.</div></th><td class='capex'>$1.76M to $2.41M</td><td class='num s'>$21,211 to -$25,872</td></tr><tr><th>Tenant pays the build (Empery-type triple net lease)<div class='basis'>You bring the site and its power; the tenant pays the build-out and operating costs. Rent = $440M / 15 years / 150 MW = $16,296 per MW per month (Empery does not say if MW are gross or IT).</div></th><td class='capex'>none</td><td class='num s'>$14,826</td></tr><tr><th>Joint venture with the tenant (Abernathy-type, you 50.1%)<div class='basis'>Bonds of $7.74M per MW of IT at 7.25% cover most of the $8.00M to $10.00M build; you put 50.1% of the rest and get 50.1% of NOI after interest. Bond principal payments not public: treated as interest-only (assumed).</div></th><td class='capex'>$0.10M to $0.87M</td><td class='num s'>$30,215</td></tr><tr><th>Preferred equity covers your cash (Macquarie-type)<div class='basis'>$2.25M per leased MW (taken as MW of IT) at 12.75% a year replaces your cash; Macquarie also took 15% of the common equity and required a signed lease.</div></th><td class='capex'>$29,437 to $0.68M</td><td class='num s'>$2,822 to -$44,261</td></tr></tbody>
+</table>
+<p class="small">Net per month is after debt service or preferred dividend and after the mining income those MW give up ($1,470 per MW per month, last 8 months). Ranges: favorable to unfavorable case. Each structure comes from one public deal at a large site; none is offered to a 5 to 50 MW site in the sources found.</p>
+</div>
+
 <div class="foot small">
 <p style="margin:0 0 4px"><b>Assumptions.</b> Mining puts all 20 MW on ASICs at 27 J/TH (37.0 PH/s per MW, no cooling overhead), revenue = hashprice x PH/s, minus 24 MWh/day at your tariff. AI paths use IT load = 1/PUE of each grid MW; 740 H100 per MW of IT (from NVIDIA DGX H100 specs); 71% utilization (Epoch); hosting rate $1.85M per MW of IT per year (TeraWulf / Fluidstack). Mine and GPU capex per MW from CoinShares Q4 2025 (in the model); hosting capex from TeraWulf and Cipher filings (not in the model). Fees are inside hashprice.</p>
-<p style="margin:0 0 4px"><b>Sources.</b> Hashprice: Luxor Hashrate Index monthly lookbacks (7 pages), Sep 2026 from a secondary summary (asic.tools). H100: https://uvik.net/blog/gpu-price-index/ (mixed index; H100 points mix marketplace, contract and index prices). Each row's URL is in github.com/Hoblayerta/mw-index/data. Series compiled 19 Oct 2026. Hosting capex and power terms, read 2 Nov 2026: TeraWulf, Fluidstack deal, 14 Aug 2025: $8-10M per MW of critical IT load, modified gross lease (https://www.sec.gov/Archives/edgar/data/1083301/000110465925078084/tm2523008d2_ex99-1.htm). TeraWulf, Abernathy JV deck, Oct 2025: $8-10M per critical MW, &quot;Power 100% passed-through to tenant&quot; (https://www.sec.gov/Archives/edgar/data/0001083301/000110465925102858/tm2529509d1_ex99-3.htm). Cipher, Fluidstack deal, 25 Sep 2025: $9-11M per MW of critical IT load, modified gross lease, power terms not stated (https://www.sec.gov/Archives/edgar/data/1819989/000095010325012168/dp234624_ex9901.htm).</p>
-<p style="margin:0">Generated 02 Nov 2026 13:54 CST with estudio-de-sitio/estudio_de_sitio.py. Model check: reproduces out/tabla_mw.csv.</p>
+<p style="margin:0 0 4px"><b>Sources.</b> Hashprice: Luxor Hashrate Index monthly lookbacks (7 pages), Sep 2026 from a secondary summary (asic.tools). H100: https://uvik.net/blog/gpu-price-index/ (mixed index; H100 points mix marketplace, contract and index prices). Each row's URL is in github.com/Hoblayerta/mw-index/data. Series compiled 19 Oct 2026. Hosting capex and power terms, read 2 Nov 2026: TeraWulf, Fluidstack deal, 14 Aug 2025: $8-10M per MW of critical IT load, modified gross lease (https://www.sec.gov/Archives/edgar/data/1083301/000110465925078084/tm2523008d2_ex99-1.htm). TeraWulf, Abernathy JV deck, Oct 2025: $8-10M per critical MW, &quot;Power 100% passed-through to tenant&quot; (https://www.sec.gov/Archives/edgar/data/0001083301/000110465925102858/tm2529509d1_ex99-3.htm). Cipher, Fluidstack deal, 25 Sep 2025: $9-11M per MW of critical IT load, modified gross lease, power terms not stated (https://www.sec.gov/Archives/edgar/data/1819989/000095010325012168/dp234624_ex9901.htm). Debt, construction, ramp and site costs, read 4 Nov 2026: USD.AI underwriting: 80% of deployment cost, 20% equity, 3 to 5 years with equal monthly principal, 3-month debt-service reserve, 1.15x DSCR; finances GPUs in Tier III/IV sites (https://usd.ai/blog/usdai-underwriting-and-risk-management). American Compute, GPU loan spreads and interest rates, updated 10 Oct 2026: onchain loans to smaller operators 10.00-15.00% (observed public prices, not quotes) (https://www.amcompute.com/gpu-debt/pricing). TeraWulf, 14 Aug 2025: 10-year Fluidstack leases, phase one ~40 MW online 1H 2026, full 200+ MW by year-end 2026 (https://www.sec.gov/Archives/edgar/data/1083301/000110465925078084/tm2523008d2_ex99-1.htm). TeraWulf Q2 2026 results, 5 Aug 2026: CB-3 delivered early July 2026; CB-4 phased rent in 2H 2026; CB-5 slipped to early 2027 (https://www.sec.gov/Archives/edgar/data/0001083301/000108330126000162/a_wulfearningsreleaseq22026.htm). Cipher business update, 24 Feb 2026: Barber Lake (Fluidstack, signed 25 Sep 2025) 10-year lease, start Oct 2026 (https://www.sec.gov/Archives/edgar/data/1819989/000181998926000007/cipherdigital_businessup.htm). Site costs as NOI margin (rent less property operating expenses, property taxes and insurance): TeraWulf 14 Aug 2025, 85%; Cipher 25 Sep 2025, 80-85%; TeraWulf Abernathy JV deck Oct 2025, ~70% average over lease life (https://www.sec.gov/Archives/edgar/data/0001083301/000110465925102858/tm2529509d1_ex99-3.htm).  Who could put up the cash: The tenant, as a JV partner (https://www.sec.gov/Archives/edgar/data/0001083301/000110465925102858/tm2529509d1_ex99-3.htm). A GPU host&#x27;s capital arm (https://hydrahost.com/financing/). Convertible-note investors (https://www.theenergymag.com/news/2026-07-01/blockfusion-ai-bitcoin-spac). The operator&#x27;s own bitcoin (https://www.sec.gov/Archives/edgar/data/0001640384/000119312526408391/lmfa-ex99_1.htm). Who pays for the build, read 5 Nov 2026: Empery Digital proxy, Sep 2026: $65M for 25% of a 150 MW Midwest site; detailed LOI for a triple net lease, tenant funds all build-out and operating costs; payments of more than $440M over 15 years from early 2027 (https://www.sec.gov/Archives/edgar/data/0001829794/000168316826007266/empery_defa14a.htm). TeraWulf, Abernathy JV, Oct 2025: TeraWulf 50.1%, Fluidstack 49.9%; 168 MW of critical IT; ~$9.5B of rent over 25 years; ~$260M average annual site NOI; build cost $8-10M per critical MW; $1.3B of bonds at 7.25% (https://www.sec.gov/Archives/edgar/data/1083301/000110465925102858/tm2529509d1_8k.htm). Applied Digital 8-K, Jan 2025: Macquarie invests $2.25M per MW of leased capacity in perpetual preferred units at 12.75%, minimum 1.80x multiple, plus 15% of the HPC business&#x27;s common equity; requires an executed lease (https://www.sec.gov/Archives/edgar/data/1144879/000149315225002040/form8-k.htm).</p>
+<p style="margin:0">Generated 09 Nov 2026 15:28 CST with estudio-de-sitio/estudio_de_sitio.py. Model check: reproduces out/tabla_mw.csv.</p>
 </div>
+
 </div></body></html>
