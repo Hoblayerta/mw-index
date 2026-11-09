@@ -10,6 +10,8 @@ Third, in [`costo-por-inscripcion/`](costo-por-inscripcion/): realized energy co
 
 Site study, in [`estudio-de-sitio/`](estudio-de-sitio/): the one-sheet an operator receives, keep mining vs host AI vs own GPUs, with capex and payback of each path.
 
+Daily dataset and ML, in [`rentabilidad-diaria-ml/`](rentabilidad-diaria-ml/): what 1 MW nets mining each day from 2016 to 2026 with three fleets, and whether logistic regression, linear regression or SVR beat a simple rule at calling next month (they don't).
+
 ## Run it
 
 ```
