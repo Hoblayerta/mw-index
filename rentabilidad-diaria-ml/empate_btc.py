@@ -8,7 +8,7 @@ needed BTC = BTC today x needed hashprice / hashprice today. That is a floor:
 when the price rises, hashrate follows and the bar moves up.
 
 "Today" is the last full month of mw_bitcoin_diario.csv. Hosting comes from
-../out/tabla_mw.csv (TeraWulf / Fluidstack rate). Power at 7 cents, as in the dataset.
+../out/tabla_mw.csv (TeraWulf / Fluidstack rate). Power at 4.8 cents, the model's default (Luxor); the daily dataset itself uses 7.
 
 Writes out/empate_btc.png and out/empate_btc.csv.
 """
@@ -20,7 +20,7 @@ import pandas as pd
 AQUI = Path(__file__).resolve().parent
 plt.rcParams["text.parse_math"] = False  # los "$" son dólares, no fórmulas
 MESES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-LUZ_USD_KWH = 0.07
+LUZ_USD_KWH = 0.048  # la misma luz del modelo (Luxor, jul 2026); el dataset diario usa 0.07
 FLOTAS = [("Older fleet, 29.5 J/TH", 29.5), ("Mid fleet, 17.5 J/TH", 17.5), ("Newest fleet, 13.5 J/TH", 13.5)]
 
 # colores: un solo tono (slot 1 de la paleta de referencia), tinta y superficie claras
@@ -68,7 +68,7 @@ def main():
     lo, hi = full.btc_necesario_usd.min() / 1000, full.btc_necesario_usd.max() / 1000
     fig.suptitle(f"Bitcoin would need ${lo:,.0f}k to ${hi:,.0f}k for mining 1 MW to match AI hosting",
                  x=0.02, ha="left", fontsize=13, fontweight="bold", color=TINTA)
-    fig.text(0.02, 0.855, f"AI hosting pays ${hosting:,.0f} per MW per day (TeraWulf / Fluidstack). Mining pays power at {LUZ_USD_KWH*100:.0f} cents/kWh.\n"
+    fig.text(0.02, 0.855, f"AI hosting pays ${hosting:,.0f} per MW per day (TeraWulf / Fluidstack). Mining pays power at {LUZ_USD_KWH*100:.1f} cents/kWh.\n"
              f"Hashprice {mes_txt}: ${hp:.1f}/PH/day (blockchain.com).", fontsize=9, color=TINTA_2, linespacing=1.4)
     fig.text(0.02, 0.02, "A floor: when the price rises, hashrate follows and the bar moves up. github.com/Hoblayerta/mw-index",
              fontsize=8.5, color=TINTA_2)
