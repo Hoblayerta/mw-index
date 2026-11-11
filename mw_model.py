@@ -33,8 +33,14 @@ SUPUESTOS = {
     # hosting
     "hosting_usd_mw_it_anio": 1_850_000,  # TeraWulf-Fluidstack
     # capex (para la columna de payback, solo referencia)
-    "capex_mina_usd_mw": 850_000,
+    "capex_mina_usd_mw": 850_000,   # obra de la mina, sin máquinas (CoinShares)
     "capex_ia_usd_mw": 20_000_000,
+    # precio de las máquinas, USD por TH: Hashrate Index ASIC Price Index, promedio de sep 2026
+    # (último dato público 27 sep 2026), por clase de eficiencia. data/asic_precio.csv
+    "usd_th_flota_vieja": 1.06,     # clase 25-38 J/TH
+    "usd_th_flota_media": 3.84,     # clase 14-19 J/TH
+    "usd_th_flota_nueva": 18.38,    # clase <14 J/TH
+    "mes_payback": "2026-09",       # mes cuyo neto diario paga la inversión
 }
 
 
@@ -143,6 +149,25 @@ def graficar(df, tok):
     fig.savefig(OUT / "fees_vs_tokens.png", dpi=150)
 
 
+def payback_mina(df):
+    """Recuperación simple por flota, sin financiamiento: (obra de la mina + máquinas que caben
+    en 1 MW) / neto diario del mes de referencia. Máquinas = TH en 1 MW x USD por TH."""
+    fila = df[df["mes"] == pd.Period(SUPUESTOS["mes_payback"], freq="M")].iloc[0]
+    out = []
+    for nombre in ("vieja", "media", "nueva"):
+        th_mw = 1e6 / SUPUESTOS[f"j_por_th_flota_{nombre}"]
+        maquinas = th_mw * SUPUESTOS[f"usd_th_flota_{nombre}"]
+        capex = SUPUESTOS["capex_mina_usd_mw"] + maquinas
+        neto = fila[f"mina_{nombre}_neto"]
+        dias = capex / neto if neto > 0 else np.nan
+        out.append({"flota": nombre, "j_por_th": SUPUESTOS[f"j_por_th_flota_{nombre}"],
+                    "usd_th": SUPUESTOS[f"usd_th_flota_{nombre}"], "th_por_mw": round(th_mw),
+                    "maquinas_usd_mw": round(maquinas), "capex_total_usd_mw": round(capex),
+                    "neto_usd_mw_dia": round(neto), "payback_dias": round(dias),
+                    "payback_anios": round(dias / 365, 1)})
+    return pd.DataFrame(out)
+
+
 def correlaciones(df):
     """Pearson sobre meses donde ambos existen. Pocos puntos: no es prueba, es rastro."""
     out = {}
@@ -168,6 +193,10 @@ if __name__ == "__main__":
         tabla[c] = tabla[c].round(0)
     tabla.to_csv(OUT / "tabla_mw.csv", index=False)
     print(tabla.dropna(subset=["mina_media_neto"]).to_string(index=False))
+    pb = payback_mina(df)
+    pb.to_csv(OUT / "payback_mina.csv", index=False)
+    print(f"\nRecuperación simple de una mina, neto de {SUPUESTOS['mes_payback']}, sin financiamiento:")
+    print(pb.to_string(index=False))
     print("\nCorrelaciones (pearson, n):")
     for k, v in correlaciones(df).items():
         print(f"  {k}: r={v[0]}  n={v[1]}")

@@ -2,7 +2,7 @@
 
 Open research on the economics of energy and compute: what a megawatt earns mining Bitcoin vs hosting AI, what each path costs to build and run, and what it takes to finance the switch. Built in public, every number linked to its source.
 
-*Last updated 9 Nov 2026. Research notes, not investment advice.*
+*Last updated 11 Nov 2026. Research notes, not investment advice.*
 
 **Run 5 to 50 MW?** Send me your MW and your power price and I'll send back a study of your site, free. [Book 20 minutes](https://calendly.com/hoblayerta) or [open an issue](https://github.com/Hoblayerta/mw-index/issues). I'll ask whether your site can join the public index; if not, your numbers stay with you.
 
@@ -54,13 +54,15 @@ Per MW of grid power, Sep 2026, power at 4.8 cents ($48/MWh, Luxor), PUE 1.3. Fr
 
 | Path | Build cost per MW | Running cost per MW per day | Revenue per MW per day | Revenue per MWh used | Simple payback |
 | --- | --- | --- | --- | --- | --- |
-| Mine, older fleet (29.5 J/TH) | ~$0.85M for a new mine, machines aside (CoinShares) | $1,152 of power | $1,333 ($181 after power) | $56 | n/a: no public ASIC price per TH |
-| Mine, mid fleet (17.5 J/TH) | same | $1,152 of power | $2,247 ($1,095 after power) | $94 | n/a |
-| Mine, newest fleet (13.5 J/TH) | same | $1,152 of power | $2,913 ($1,761 after power) | $121 | n/a |
+| Mine, older fleet (29.5 J/TH) | ~$0.85M for a new mine (CoinShares) + machines $0.04M | $1,152 of power | $1,333 ($181 after power) | $56 | 13.4 years, before financing |
+| Mine, mid fleet (17.5 J/TH) | same + machines $0.22M | $1,152 of power | $2,247 ($1,095 after power) | $94 | 2.7 years, before financing |
+| Mine, newest fleet (13.5 J/TH) | same + machines $1.36M | $1,152 of power | $2,913 ($1,761 after power) | $121 | 3.4 years, before financing |
 | Host AI for a tenant | $6.2M to $8.5M ($8M to $11M per MW of IT: [TeraWulf](https://www.sec.gov/Archives/edgar/data/1083301/000110465925078084/tm2523008d2_ex99-1.htm), [Cipher](https://www.sec.gov/Archives/edgar/data/1819989/000095010325012168/dp234624_ex9901.htm)) | Power paid by the tenant; site costs $585 to $1,170 (15% to 30% of rent) | $3,899 (TeraWulf / Fluidstack rate) | $162, plus the power the tenant pays | 5.1 to 8.5 years, before financing |
 | Rent out your own H100s | ~$20M (CoinShares) | $1,152 of power | $27,256 ($26,104 after power), Oct 2026 prices at 71% use | $1,136 | 2.1 years before depreciation, staff and financing. GPUs lose value fast, so treat this as a ceiling |
 
 Site costs come from the NOI margins TeraWulf and Cipher report for their hosting leases (85%) and TeraWulf's Abernathy average over the lease (~70%).
+
+ASIC prices: Hashrate Index ASIC Price Index, Sep 2026 average, last public value 27 Sep 2026 (read via [The Block](https://www.theblock.co/data/on-chain-metrics/bitcoin/bitcoin-asic-price-index)): $1.06 per TH for 25 to 38 J/TH, $3.84 for 14 to 19 J/TH and $18.38 under 14 J/TH. Machines = TH that fit in 1 MW x price per TH; payback = mine plus machines over the Sep 2026 net per day.
 
 **In one line:** a MWh that costs $48 brings in $94 mining with a mid fleet and $162 hosting AI, but the hosting building costs 7 to 10 times a mine per MW.
 
@@ -147,14 +149,14 @@ pip install pandas matplotlib
 python3 mw_model.py
 ```
 
-Writes `out/mw_minar_vs_ia.png`, `out/fees_vs_tokens.png` and `out/tabla_mw.csv`.
+Writes `out/mw_minar_vs_ia.png`, `out/fees_vs_tokens.png`, `out/tabla_mw.csv` and `out/payback_mina.csv`.
 
 ![What 1 MW earns per day](out/mw_minar_vs_ia.png)
 
 ### Files
 
 - `mw_model.py`: the model. All assumptions live in the `SUPUESTOS` dict at the top (power price, fleet J/TH, PUE, H100s per MW, utilization, hosting rate, capex). Change them there, not in the formulas.
-- `data/*.csv`: monthly series, one source URL per row. Gaps are real and not filled.
+- `data/*.csv`: monthly series, one source URL per row. Gaps are real and not filled. `data/leer_asic_precio.py` rebuilds the ASIC price files.
 - `data/parametros.md`: per-MW parameters with their source.
 - `out/tabla_mw.csv`: USD per MW per day by month for each use, and the gap vs a 17.5 J/TH fleet.
 - `indice_mw_v0.ipynb`: same code, executed, with notes (in Spanish).
@@ -171,7 +173,8 @@ Column and variable names are in Spanish: `mes` month, `mina_vieja/media/nueva_n
 | PUE | 1.3 | |
 | H100s per MW of IT | 740 | derived from NVIDIA DGX H100 specs |
 | GPU utilization | 71% | Epoch |
-| Capex | ~US$0.85M per MW (mine), ~US$20M per MW (owned GPUs) | CoinShares Q4 2025 |
+| Capex | ~US$0.85M per MW (mine, machines aside), ~US$20M per MW (owned GPUs) | CoinShares Q4 2025 |
+| ASIC price | US$1.06 / 3.84 / 18.38 per TH for the 29.5 / 17.5 / 13.5 J/TH fleets, Sep 2026 average | Hashrate Index ASIC Price Index, via [The Block](https://www.theblock.co/data/on-chain-metrics/bitcoin/bitcoin-asic-price-index) |
 
 Mining revenue = hashprice (USD/PH/day) x PH/s that fit in 1 MW, minus 24 MWh of power. Hosting and GPU figures are per MW drawn from the grid (IT load = 1 / PUE).
 
