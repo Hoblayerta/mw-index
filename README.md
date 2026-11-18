@@ -109,6 +109,12 @@ This work builds on [Blockspace Value Theory](https://block.space/docs/bvt), fro
 
 Newest first.
 
+### Week of 16 Nov 2026: the middle seat is full
+
+- Bringing the tenant to a site is a crowded job, and above 5 MW it pays little. Csquare's referral program pays 2% of monthly rent for deals over 5 MW ([Csquare, Mar 2026](https://csquare.com/hubfs/CenterSquare/docs/Centersquare_ReferralPartnerProgramGuide.pdf)). Bitmain pays $10k to $20k per referred MW of hosting, in Antminer coupons ([Bitmain](https://www.bitmain.com/miningFarm/turnkeyHosting)). In our calls and emails this month, site owners, a GPU lender and a gas-to-compute operator were short of neither middlemen nor MW.
+- What's short is a tenant with credit, and in big deals the tenant is the one who gets paid for showing up. Blockfusion gives CoreWeave a warrant for 2,870,813 shares at $7.46 alongside its 15-year Niagara Falls lease ([424B3, Oct 2026](https://www.sec.gov/Archives/edgar/data/2097508/000118518526004966/bldc424b3102226.htm)).
+- The MW is there, the gear often isn't. Power transformers averaged 128 weeks of lead time in Q2 2025 and switchgear 44 weeks ([Wood Mackenzie, Oct 2025](https://www.woodmac.com/news/opinion/mind-the-gap-tackling-supply-chain-challenges-in-the-electric-td-sector/)). For data center class padmount transformers, "the number I hear over and over is 40-plus weeks" ([Giga Energy, Aug 2026](https://www.gigaenergy.com/blog/lead-time-delays-for-data-centers)).
+
 ### Week of 9 Nov 2026: machine learning does not beat today's power bill
 
 - A daily dataset of what 1 MW nets mining since 2016 (3,921 days, three fleets): [`rentabilidad-diaria-ml/`](rentabilidad-diaria-ml/).
